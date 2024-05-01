@@ -1,0 +1,445 @@
+
+html{
+    scroll-snap-type: y mandatory;
+    --vclaro: #E4FDE1; /*Se declaran para agilizar*/
+    --verde: #8ACB88;
+    --voscuro: #648381;
+    --gris: #575761;
+    --amarilo: #f7a072;
+}
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    background-image: linear-gradient(to top, var(--vclaro) 0%, white 100% ); /*fondo degradado*/
+    height: 100%;
+}
+h1{
+    font-size: 4vw;
+}
+h2{
+    font-size: 4vw;
+}
+h3{
+    font-size: 3vw;
+}
+h1,h2,h3{
+    text-align: center;
+}
+@media screen and (min-width: 576px){
+    h1{
+        font-size: 3.5vw;
+    }
+    h2{
+        font-size: 3vw;
+    }
+    h3{
+        font-size: 2vw;
+    }
+}
+@media screen and (min-width:992px) {
+    h1{
+        font-size: 1.5vw;
+    }
+    h2{
+        font-size: 1.2vw;
+    }
+    h3{
+        font-size: 1vw;
+    }
+}
+.titulo{
+    text-align: center;
+    
+}
+.titulo span{
+    font-size: 3vw;
+}
+@media screen and (min-width:992px) {
+    .titulo span{
+        font-size: 1.3vw;
+    }
+}
+
+.nav--bg{
+    background-color: var(--gris);
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav a{
+    color: var(--vclaro);
+    text-decoration: none;
+    font-weight: bolder;
+    width: 15vw;
+    font-size: 2.8vw;
+    padding: 1.5vw;/*Para rellenar el fondo al pasar con el raton*/
+}
+.loc{
+    display: flex;
+    align-items: flex-end;
+}
+@media screen and (min-width: 576px){
+    .nav{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav a{
+        font-size: 1.8vw;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .nav a{
+        font-size: 0.8vw;
+        padding: 0.3vw;
+        width: 5vw;
+    }
+}
+
+.nav a:hover{
+    background-color: var(--vclaro);
+    color: #648381;
+}
+.contenedor{
+    width: 80vw;
+    margin: 0 auto 0 auto;
+    text-align: center;/*centrar texto enlace dentro del padding*/
+}
+
+div img{
+    width: 10vw;
+    height: auto;
+}
+@media screen and (min-width:576px) {
+    div img{
+        width: 9vw;
+    }
+}
+@media screen and (min-width:992px) {
+    div img{
+        width: 3vw;
+    } 
+}
+.dev{
+    background-image: url(img/fondo.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 450px;
+    padding-top: 3vw;
+    position: relative;
+    margin-bottom: 2vw;
+}
+@media screen and (min-width:576px) {
+    .dev{
+        background-attachment: fixed;
+    }
+}
+@media screen and (min-width:992px) {
+    .dev{
+        height: 10vw;
+        padding-top: 0.5vw;
+    }
+}
+.dev__contenedor{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;/*al cambiar a column, con align se alinea horizontalmente*/
+  justify-content: center;/*al cambiar a column, con justify se alinea verticalmente*/
+}
+.dev__contenedor h2, .dev__contenedor p{
+    color: var(--voscuro);
+}
+.contenedor--sombra{ /*Sombreado sacado de CSSmatic*/
+    -webkit-box-shadow: 7px 6px 25px -7px rgba(18,54,33,0.7);
+    -moz-box-shadow: 7px 6px 25px -7px rgba(18,54,33,0.7);
+    box-shadow: 7px 6px 25px -7px rgba(18,54,33,0.7); 
+    background-color: white;
+    padding: 1vw;
+}
+/*Botones*/
+.boton {
+    background-color: var(--gris);
+    color: var(--vclaro);
+    padding: 1.5vw 3vw;
+    margin-top: 5vw;
+    font-size: 3vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 1vw;
+    width: 80vw;
+    text-align: center;
+    border: none;/*Para quitar el borde del boton input*/
+}
+.boton:hover{
+    cursor: pointer;
+}
+@media screen and (min-width:576px) {
+    .boton{
+        width: auto;
+        font-size: 2vw;
+        padding: 1vw 1vw;
+        margin-top: 2vw;
+        margin-bottom: 5vw;
+    }
+}
+@media screen and (min-width:992px) {
+    .boton{
+        width: auto;
+        font-size: 0.8vw;
+        padding: 0.3vw 0.3vw;
+        margin-top: 0.3vw;
+        margin-bottom: 0.5vw;
+        border-radius: 10px;
+    }
+}
+/*Presentacion*/
+.card__contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card{
+    margin: 1.5vw;
+    max-width: 35vw;
+}
+@media screen and (min-width:576px) {
+    .card__contenedor{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .card{
+        margin: 1vw;
+    }
+}
+/*Formulario*/
+.formulario{
+    margin: auto;/*Para centrar*/
+    padding: 2vw;
+    border-radius: 1vw;
+    background-color: var(--voscuro);
+    width: 80vw;    
+}
+.formulario fieldset{
+    border: none;
+    padding: 0;
+}
+.formulario legend{
+    text-align: center;
+    color: var(--amarilo);
+    font-weight: bolder;
+    font-size: 3vw;
+    margin-bottom: 1.5vw;
+}
+div.campo{
+    margin-bottom: 1vw;
+}
+.campo label{
+    display: block;
+    font-weight: bold;
+}
+.contenedor__campos{
+    margin-bottom: 3vw;
+}
+div.campo input{
+    border: none;
+    border-radius: 0.5vw;
+    width: auto;
+}
+.campo textarea{
+    height: 15vw;
+}
+.textinput{
+    height: 15vw;
+    width: 90%;
+    border: none;
+    padding: 1vw;
+    border-radius: 0.5vw;
+}
+
+
+@media screen and (min-width:576px) {
+    .formulario legend{
+        font-size: 3vw;
+        margin-bottom: 1.5vw;
+    }
+    div.campo input{
+        border: none;
+        border-radius: 0.5vw;
+        width: auto;
+    }
+    .campo input{
+        height: 2vw;
+    }
+    .campo textarea{
+        height: 15vw;
+    }
+    .textinput{
+        height: 15vw;
+        width: 90%;
+        padding: 1vw;
+        border-radius: 0.5vw;
+    }
+}
+@media screen and (min-width:992px) {
+   
+    .formulario legend{
+        font-size: 3vw;
+        margin-bottom: 1.5vw;
+    }
+    div.campo{
+        margin-bottom: 1vw;
+    }
+    .campo input{
+        height: 1.5vw;
+    }
+    .contenedor__campos{
+        margin-bottom: 3vw;
+    }
+    div.campo input{
+        border-radius: 0.5vw;
+        width: auto;
+    }
+    .campo textarea{
+        height: 15vw;
+    }
+    .textinput{
+        height: 15vw;
+        width: 90%;
+        padding: 1vw;
+        border-radius: 0.5vw;
+    }
+}
+/*footer*/
+.footer{
+    background-color: var(--gris);
+    color: #E4FDE1;
+    font-weight: bolder;
+    text-align: center;
+}
+/*Proyectos*/
+.proy{
+    width: 100%;
+    margin: 0 auto;
+    height: 30vw;
+    display: flex;
+}
+.proy__contenedor{
+    width: 90%;
+    margin: 5vw auto;
+}
+.proy__contenedor div{
+    height: 20vw;
+}
+.proy__contenedor:after{
+    /*Para que el contenedor muestre el elemento aunque estos sean flotantes*/
+    content: ""; /*En lugar de aplicarle valor se mete vacío*/
+    height: 0px;
+   
+}
+
+/*Estructura de cada componente de la galería imagen + desc*/
+.proy__contenedor div{
+    width:28%;
+    display: inline;
+    float: left;
+    margin: 0% 3% 0% 0%;
+    padding: 0;
+}
+.proy__contenedor div img{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px #666;
+    border: 5px solid white;
+}
+.proy__contenedor div p{
+   opacity: 0;
+}
+/*Estructura de la descripción, por defecto que no se muestre*/
+.proy__contenedor div img~span{ /*viergulilla de la ñ con alrgr+4 para indicar que van juntos a la misma altura*/
+    width: 100%;
+    display: block;
+    opacity: 0;
+    margin: 0;
+    padding: 2px;
+    color: white;
+    background: rgba(0,0,0,.7);
+    box-shadow: 0 0 10px #666;
+    text-align: center;
+}
+/*Para que se muestre al posicionar el cursor encima de la imagen*/
+.proy__contenedor div img:hover+span{ /*el + para indicar que se aplica tanto al img como al span*/
+    opacity: 1;
+}
+/*Se especifica el comportamiento que tendrán las imágenes al posicionar el cursor encima del contenedor*/
+.proy__contenedor:hover div{ /*aplica a todo contenedor que tenga div*/
+    opacity: 0;
+    transition: 2s;
+}
+.proy__contenedor:hover div.center{ /*aplica a todo contenedor que tenga div*/
+    transform: translate(-20vw);
+}
+.proy__contenedor:hover div.der{ /*aplica a todo contenedor que tenga div*/
+    transform: translate(20vw);
+}
+/*Se especifica el comportamiento que tendrá la imagen seleccionada*/
+.proy__contenedor:hover div:hover{ /*Se aplica sobre el div en el que está el ratón*/
+    opacity: 1;
+    transform: scale(1);
+}
+
+.proy__contenedor:hover div.center:hover{ /*Se aplica sobre el div en el que está el ratón*/
+    transform: translate(-20vw);
+}
+.proy__contenedor:hover div p{
+    opacity: 1;
+    font-size: 2vw;
+    font-weight: bold;
+    transform: translate(30vw, -20vw);
+    transition: 2s;
+}
+.proy__contenedor:hover div.der p{
+    transform: translate(-30vw, -20vw);
+}
+/*CV*/
+.cv{
+    display: flex;
+    flex-direction: column;
+    margin: 5vw auto;
+    max-width: 80vw;
+}
+@media screen and (min-width:576px) {
+    .cv{
+        flex-direction: row;
+        margin: 5vw auto;
+        max-width: 80vw;
+    }
+}
+.cv__izq {
+   background-color: var(--voscuro);
+   color: var(--vclaro);
+   text-align: center;
+   padding: 0.5vw;
+}
+.cv__izq h4{
+    text-align: left;
+    color: var(--amarilo);
+}
+.cv__izq a{
+    text-decoration: none;
+    color: var(--vclaro);
+}
+.cv__der {
+    padding: 1vw;
+}
+.cv__der p{
+    text-align: center;
+}
+.cv__der .info{
+    text-align: left;
+    font-weight: bold;
+}
